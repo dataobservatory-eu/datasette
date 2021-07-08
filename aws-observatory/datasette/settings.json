@@ -1,0 +1,5 @@
+{
+    "default_page_size": 50,
+    "max_returned_rows": 20000,
+    "base_url" : "/"
+}

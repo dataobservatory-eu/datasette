@@ -89,6 +89,8 @@ def json_renderer(args, data, view_name):
             "status": 400,
             "title": None,
         }
+
+
     # Handle _nl option for _shape=array
     nl = args.get("_nl", "")
     if nl and shape == "array":
@@ -96,6 +98,9 @@ def json_renderer(args, data, view_name):
         content_type = "text/plain"
     else:
         body = json.dumps(data, cls=CustomJSONEncoder)
+        body = body.replace('\\', "")           # fix JSON nested object/array parsing
+        body = body.replace('"{', '{')          # fix JSON nested object/array parsing
+        body = body.replace('}"', '}')          # fix JSON nested object/array parsing
         content_type = "application/json; charset=utf-8"
     headers = {}
     if next_url:

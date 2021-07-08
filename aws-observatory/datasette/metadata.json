@@ -1,0 +1,32 @@
+{
+    "title": "Green Deal Data Observatory API",
+    "description": "Dataset API",
+    "license": "ODbL",
+    "license_url": "https://opendatacommons.org/licenses/odbl/",
+    "source": "Green Deal Data Observatory",
+    "source_url": "https://greendeal.dataobservatory.eu/",
+    "extra_css_urls": [
+        "static/css/styles.css"
+    ],
+    "extra_js_urls": [
+        "static/js/script.css"
+    ],
+    "databases": {
+        "database": {
+                "tables": {
+                    "codebook": {
+                        "datasette-vega": true
+                        "pretty-json": true
+                    },
+                    "data": {
+                        "datasette-vega": true
+                        "pretty-json": true
+                    },
+                    "metadata": {
+                        "datasette-vega": true
+                        "pretty-json": true
+                    }                
+            }
+        }
+    }
+}

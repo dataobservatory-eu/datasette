@@ -1,0 +1,15 @@
+[Unit]
+Description=Datasette
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Environment="DATASETTE_SECRET="
+WorkingDirectory=/datasette
+ExecStart=/home/ubuntu/.local/bin/datasette . -h 0.0.0.0 -p 8000\
+  --reload --template-dir=templates/ --plugins-dir=plugins/ 
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
